@@ -1,0 +1,46 @@
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: root
+      DB_PASSWORD: 40871231h
+      DB_NAME: job
+      PORT: 8080
+    ports:
+      - 8080:8080
+
+    depends_on:
+      - mysql
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 5173:5173
+    depends_on:
+      - api
+
+  mysql:
+    image: mysql:9.0
+    environment:
+      MYSQL_DATABASE: job
+      MYSQL_ROOT_PASSWORD: 40871231h
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql_data:
