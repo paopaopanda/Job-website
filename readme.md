@@ -33,4 +33,5 @@ LINK:http://3.27.197.123:5173/
 
 ## 資料庫設計
 
-[View on Eraser![](https://app.eraser.io/workspace/mLO9G12WzycNUAndcqCG/preview?elements=0AOmm5JPOfjzTiHA_dRpEQ&type=embed)](https://app.eraser.io/workspace/mLO9G12WzycNUAndcqCG?elements=0AOmm5JPOfjzTiHA_dRpEQ)
+![image](https://github.com/user-attachments/assets/3e7e9deb-3957-4737-b3ee-95093473a339)
+
